@@ -12,20 +12,21 @@ interface ItemProps {
 }
 
 type LayoutProps = ViewPagerAndroidProps & {
-		backgroundColor: PropTypes.string,
-		indicatorTabColor: PropTypes.string,
-		indicatorTabHeight: number
+		backgroundColor: string
+		indicatorTabColor: string
+    indicatorTabHeight: number
+    contentHeight: number
 		children: React.ReactNode
 		scrollable?: boolean
 		backgroundImage?: string
 		center?: boolean
 }
 
-export namespace TabLayoutAndroid {
-  export default class TabLayoutAndroid extends React.Component<LayoutProps> {
 
-  }
-  export class Item extends React.Component<ItemProps> {
+export class TabLayoutItem extends React.Component<ItemProps> {
 
-  }
+}
+
+export class TabLayoutAndroid extends React.Component<LayoutProps> {
+  static Item: typeof TabLayoutItem
 }
